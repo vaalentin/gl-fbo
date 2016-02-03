@@ -1,0 +1,23 @@
+{
+  "name": "gl-fbo",
+  "version": "0.0.0",
+  "description": "WebGL framebuffer wrapper.",
+  "main": "dist/index.js",
+  "scripts": {
+    "watch": "budo example/index.js -- -t babelify"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vaalentin/gl-fbo.git"
+  },
+  "keywords": [
+    "WebGL",
+    "Framebuffer"
+  ],
+  "author": "Vaalentin <vaalentin@protonmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vaalentin/gl-fbo/issues"
+  },
+  "homepage": "https://github.com/vaalentin/gl-fbo#readme"
+}
