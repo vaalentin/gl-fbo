@@ -4,7 +4,7 @@
   "description": "WebGL framebuffer wrapper.",
   "main": "dist/index.js",
   "scripts": {
-    "watch": "budo example/index.js -- -t babelify"
+    "watch": "budo example/index.js --live -- -t babelify"
   },
   "repository": {
     "type": "git",
@@ -24,5 +24,11 @@
     "babel-preset-es2015": "^6.3.13",
     "babelify": "^7.2.0",
     "budo": "^8.0.3"
+  },
+  "dependencies": {
+    "@vaalentin/geo-plane": "^1.0.1",
+    "@vaalentin/gl-buffer": "^1.0.2",
+    "@vaalentin/gl-context": "^1.0.2",
+    "@vaalentin/gl-program": "^1.0.3"
   }
 }
