@@ -42,7 +42,11 @@ export default class Fbo {
 
   bind() {
     const gl = this.gl;
-
     gl.bindFramebuffer(gl.FRAMEBUFFER, this.fbo);
+  }
+
+  unbind() {
+    const gl = this.gl;
+    gl.bindFramebuffer(gl.FRAMEBUFFER, null);
   }
 }
