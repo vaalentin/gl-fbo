@@ -30,6 +30,7 @@
     "@vaalentin/gl-buffer": "^1.0.2",
     "@vaalentin/gl-context": "^1.0.2",
     "@vaalentin/gl-program": "^1.0.3",
-    "gl-matrix": "^2.3.1"
+    "gl-matrix": "^2.3.1",
+    "math-utils": "^1.0.1"
   }
 }

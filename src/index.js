@@ -1,13 +1,4 @@
-/**
- * http://www.skorks.com/2010/10/write-a-function-to-determine-if-a-number-is-a-power-of-2/
- *
- * @function isPowerOfTwo
- * @param {float} value
- * @returns {boolean}
- */
-function isPowerOfTwo(value) {
-  return value !== 0 && value & (value - 1) === 0;
-}
+import { isPOT } from 'math-utils';
 
 export default class Fbo {
   constructor(gl, width, height) {
@@ -22,7 +13,7 @@ export default class Fbo {
     this.texture = gl.createTexture();
     gl.bindTexture(gl.TEXTURE_2D, this.texture);
 
-    if(isPowerOfTwo(width) && isPowerOfTwo(height)) {
+    if(isPOT(width) && isPOT(height)) {
       gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
       gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
     } else {
