@@ -3,8 +3,8 @@ import getGl from '@vaalentin/gl-context';
 import Program from '@vaalentin/gl-program';
 import getPlaneGeometry from '@vaalentin/geo-plane';
 import Buffer from '@vaalentin/gl-buffer';
+import TextureDisplay from '@vaalentin/gl-texture-display';
 import Fbo from '../src/';
-import FboHelper from '../src/gl-fbo-helper';
 
 const WIDTH = 400;
 const HEIGHT = 400;
@@ -110,7 +110,7 @@ mat4.translate(modelViewMatrix, modelViewMatrix, vec3.fromValues(0, 0, -5));
 let time = 0;
 
 const fbo = new Fbo(gl, WIDTH, HEIGHT);
-const fboHelper = new FboHelper(gl, fbo, 0.25, 0.25, 0.75, 0);
+const textureDisplay = new TextureDisplay(gl, fbo.texture, 0.25, 0.25, 0.75, 0);
 
 (function tick() {
   gl.clear(gl.COLOR_DEPTH_BUFFER_BIT | gl.COLOR_BUFFER_BIT);
@@ -142,7 +142,7 @@ const fboHelper = new FboHelper(gl, fbo, 0.25, 0.25, 0.75, 0);
 
   gl.drawArrays(gl.POINTS, 0, particlesUvsBuffer.length / 2);
 
-  fboHelper.render();
+  textureDisplay.render();
 
   requestAnimationFrame(tick);
 })();
