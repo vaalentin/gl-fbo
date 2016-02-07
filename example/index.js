@@ -135,10 +135,7 @@ const textureDisplay = new TextureDisplay(gl, fbo.texture, 0.25, 0.25, 0.75, 0);
   renderProgram.setUniform('uProjectionMatrix', projectionMatrix);
   renderProgram.setUniform('uModelViewMatrix', modelViewMatrix);
 
-  // fbo should use gl-texture
-  gl.activeTexture(gl.TEXTURE0 + 1);
-  gl.bindTexture(gl.TEXTURE_2D, fbo.texture);
-  renderProgram.setUniform('uPositionsTexture', 1);
+  renderProgram.setUniform('uPositionsTexture', fbo.texture.bind(1));
 
   gl.drawArrays(gl.POINTS, 0, particlesUvsBuffer.length / 2);
 
