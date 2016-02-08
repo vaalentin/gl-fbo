@@ -1,10 +1,10 @@
 {
   "name": "gl-fbo",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "WebGL framebuffer wrapper.",
   "main": "dist/index.js",
   "scripts": {
-    "watch": "budo example/index.js --live -- -t babelify"
+    "start": "budo example/index.js --live -- -t babelify",
     "test": "browserify test/index.js -t babelify | browser-run --static . | tap-spec",
     "build": "browserify src/index.js -t babelify -s @vaalentin/gl-fbo > dist/index.js",
     "prepublish": "npm run build"
@@ -15,7 +15,8 @@
   },
   "keywords": [
     "WebGL",
-    "Framebuffer"
+    "framebuffer",
+    "fbo"
   ],
   "author": "Vaalentin <vaalentin@protonmail.com>",
   "license": "MIT",

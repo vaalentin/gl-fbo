@@ -1,7 +1,16 @@
 import { isPOT } from 'math-utils';
 import Texture from '@vaalentin/gl-texture';
 
+/**
+ * @class Fbo
+ */
 export default class Fbo {
+  /**
+   * @constructs Fbo
+   * @param {WebGLRenderingContext} gl
+   * @param {uint} width
+   * @param {uint} height
+   */
   constructor(gl, width, height) {
     this.gl = gl;
 
@@ -19,13 +28,29 @@ export default class Fbo {
     gl.bindFramebuffer(gl.FRAMEBUFFER, null);
   }
 
+  /**
+   * @method bind
+   * @public
+   */
   bind() {
-    const gl = this.gl;
-    gl.bindFramebuffer(gl.FRAMEBUFFER, this.fbo);
+    this.gl.bindFramebuffer(this.gl.FRAMEBUFFER, this.fbo);
   }
 
+  /**
+   * @method unbind
+   * @public
+   */
   unbind() {
-    const gl = this.gl;
-    gl.bindFramebuffer(gl.FRAMEBUFFER, null);
+    this.gl.bindFramebuffer(this.gl.FRAMEBUFFER, null);
+  }
+
+  /**
+   * @method dispose
+   * @public
+   */
+  dispose() {
+    this.gl.deleteFramebuffer(this.fbo);
+    this.fbo = null;
+    this.texture.dispose();
   }
 }
