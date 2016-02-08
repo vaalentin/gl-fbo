@@ -1,6 +1,6 @@
 {
-  "name": "gl-fbo",
-  "version": "0.0.1",
+  "name": "@vaalentin/gl-fbo",
+  "version": "0.0.2",
   "description": "WebGL framebuffer wrapper.",
   "main": "dist/index.js",
   "scripts": {
